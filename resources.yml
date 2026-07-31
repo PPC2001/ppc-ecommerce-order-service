@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Auxiliary sidecar resources for ppc-ecommerce-order-service'
+
+Resources:
+  OrderEventsQueue:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: !Sub 'ppc-ecommerce-order-events-${AWS::Region}'
+      VisibilityTimeout: 30
